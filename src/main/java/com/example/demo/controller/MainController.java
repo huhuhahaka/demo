@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.annotation.SwitchDataSource;
 import com.example.demo.bean.Main;
 import com.example.demo.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +19,13 @@ public class MainController {
     MainService mainService;
 
     @GetMapping("/test")
-    @SwitchDataSource("test")
-    public Main getMainById(Integer id){
-        return mainService.getMainById(id);
+    public Main getMainByIdInTest(Integer id){
+        return mainService.getMainByIdInTest(id);
     }
 
+    @GetMapping("/test2")
+    public Main getMainByIdInTest2(Integer id){
+        return mainService.getMainByIdInTest2(id);
+    }
 
 }
